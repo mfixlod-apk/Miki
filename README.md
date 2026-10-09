@@ -1,9 +1,14 @@
-# Miki — MFIX POS Android
+# MFIX POS Android APK
 
-This repository is the clean home for the MFIX POS Android wrapper and its RawBT printing integration.
+This repository runs a reproducible GitHub Actions build of the complete MFIX POS Android app from the canonical source repository.
 
-## Build APK
+## Download the APK
+1. Open [Actions](https://github.com/mfixlod-apk/Miki/actions).
+2. Open the latest successful **Build MFIX Android APK** run.
+3. Under **Artifacts**, download **MFIX-POS-APK** and extract `app-release.apk`.
+4. Install it on the Android device. Android may ask you to allow installation from the browser or file manager.
 
-The GitHub Actions workflow builds a debug APK and uploads it as an artifact. Open **Actions → Build APK → latest successful run → Artifacts** to download it.
+## Source
+The workflow clones [mfixlod-apk/Mfix-pos](https://github.com/mfixlod-apk/Mfix-pos), validates its full web assets and 19 content parts, builds the release APK, and verifies the APK signature before uploading it.
 
-Project source should include the Android app under `app/`, the root Gradle build files, and the bundled web assets.
+**Note:** The APK is only ready to download after the workflow completes successfully. A failed or running build is not a finished APK.
